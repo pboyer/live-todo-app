@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { createClient } from "@liveblocks/client";
-import { liveblocksEnhancer } from "@liveblocks/redux";
+import { actions, liveblocksEnhancer } from "@liveblocks/redux";
 import { PayloadAction, configureStore, createSlice } from "@reduxjs/toolkit";
-import { Provider, shallowEqual, useDispatch, useSelector } from "react-redux";
-import { actions } from "@liveblocks/redux";
 import { nanoid } from "nanoid";
+import { useEffect } from "react";
+import { Provider, shallowEqual, useDispatch, useSelector } from "react-redux";
 
 const client = createClient({
   publicApiKey: "pk_test_YQwmruaR10F3T86-tzbm-o-r",
@@ -53,7 +52,7 @@ const slice = createSlice({
   },
 });
 
-export function makeStore() {
+function makeStore() {
   return configureStore({
     reducer: slice.reducer,
     enhancers: [
