@@ -83,8 +83,8 @@ function WhoIsHere() {
 export default function Home() {
   return (
     <Provider store={store}>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="w-full  m-4">
+      <main className="flex flex-col items-center justify-between px-5 max-w-2xl mx-auto">
+        <div className="w-full m-4">
           <Inner />
         </div>
       </main>
